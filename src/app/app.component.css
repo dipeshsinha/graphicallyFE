@@ -1,0 +1,99 @@
+.sidebar {
+  background-image: linear-gradient(to bottom, #FD5C91 , #EC260F);
+  width: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.sidebar h1 {
+  color: white;
+}
+
+.portfolio {
+  background-color: #1E1E2F;
+  position: absolute;
+  top: 0;
+  left: 250px;
+  right: 0;
+  bottom: 0;
+  color: white;
+  -moz-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+}
+
+input[type=checkbox] {
+ display: none;
+}
+
+input:checked ~ .portfolio {
+  left: 0;
+}
+
+input:checked ~ label {
+  left: 0;
+}
+
+label {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 260px;
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+  font-size: xx-large;
+  -moz-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+}
+.nav-item{
+  font-size: large;
+  cursor: pointer;
+}
+.graphically{
+  -webkit-animation: rotate-90-right-ccw 0.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) both;
+	        animation: rotate-90-right-ccw 0.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) both;
+}
+.nav-link:hover{
+  border-radius: 10px;
+  border-color: transparent;
+  -webkit-animation: fade 0.3s both;
+  animation: fade 0.3s both;
+  cursor: pointer;
+}
+.nav-link:focus{
+  border: none;
+}
+.active {
+  background-color: #1E1E2F;
+  border-radius: 10px;
+  border-color: transparent;
+}
+
+@keyframes rotate-90-right-ccw {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+            margin-right: 30px;
+            margin-top: -20px;
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    margin-right: 30px;
+    margin-top: -20px;
+  }
+}
+@keyframes fade{
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #1E1E2F;
+  }
+}

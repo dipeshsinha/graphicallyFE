@@ -1,0 +1,30 @@
+<ng-progress></ng-progress>
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="scrollbar" id="style-1">
+  <div class="force-overflow">
+    <div class="container-fluid">
+      <input ngModel required name="x" type="text" class="btn m-2" placeholder="Enter values separated by ' , '(No Spaces) " style="background-color: white; width: 100%">
+      <input ngModel required name="y" type="text" class="btn m-2" placeholder="Enter labels separated by ' , '(No Spaces) " style="background-color: white; width: 100%">
+      <span class="m-2" style="font-size: x-large;">
+        <hr style="background-color: white">
+        Advanced Options (Optional) :
+      </span><br><br>
+      <input ngModel required name="exp" type="text" class="btn m-2" placeholder="Enter labels to explode separated by ' , '(No Spaces) " style="background-color: white; width: 100%">
+      <span class="m-2" style="font-size: x-large;">
+        <hr style="background-color: white">
+        Image Quality (Optional , Default : 480P) :
+      </span><br><br>
+      <div class="form-group">
+          <select ngModel name="quality" id="inputState" class="form-control" style="background-color: transparent; color: white;">
+              <option selected value="100">480P</option>
+            <option value="160">720P</option>
+            <option value="300">1080P</option>
+            <option value="600">4K</option>
+            <option value="1200">8K</option>
+          </select>
+        </div>
+      <button class="btn btn-danger" type="submit">Get Graph</button>
+    </div>
+
+  </div>
+</form>

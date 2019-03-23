@@ -1,0 +1,60 @@
+
+<ng-progress></ng-progress>
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="scrollbar" id="style-1">
+    <div class="force-overflow">
+        <div class="container-fluid">
+            <input ngModel required name="x" type="text" class="btn m-2" placeholder="Enter the X coordinates separated by ' , '(No Spaces) " style="background-color: white; width: 100%">
+            <span class="m-2" style="font-size: x-large;">
+              <hr style="background-color: white">
+              Advanced Options (Optional) :
+            </span><br><br>
+
+              <div class="row">
+                <div class="col">
+                  <input ngModel name="xlabel" type="text" class="form-control" placeholder="X axis Label" style="background-color: transparent">
+                </div>
+                <div class="col">
+                  <input ngModel name="ylabel" type="text" class="form-control" placeholder="Y axis Label" style="background-color: transparent">
+                </div>
+                <div class="col">
+                  <input ngModel name="gname" type="text" class="form-control" placeholder="Graph Name" style="background-color: transparent">
+                </div>
+              </div>
+
+            Histogram Color : <input
+            class="btn m-2"
+            style="border-color: white"
+            [(ngModel)]="color"
+              type="text"
+              name="color"
+              [style.background]="color"
+              [cpOutputFormat]="'hex'"
+              [(colorPicker)]="color"/><br>
+            Bar Width : <input ngModel type="number" value="0.5" class="btn m-2" style="border-color: white; color: white;" name="lwidth"> (Default : 1)<br>
+      <hr style="background-color: white">
+      <span class="m-2" style="font-size: x-large;">
+        Custom Frequency Ranges :
+      </span><br><br>
+
+      <input ngModel required name="range" type="text" class="btn m-2" placeholder="Enter custom range (ex: For 10-20,20-30,30-40 , Enter '10,20,30,40'" style="color: white;background-color: transparent; border-color: white; width: 100%">
+
+      <hr style="background-color: white">
+
+      <span class="m-2" style="font-size: x-large;">
+        Image Quality (Optional , Default : 480P) :
+      </span><br><br>
+      <div class="form-group">
+          <select ngModel name="quality" id="inputState" class="form-control" style="background-color: transparent; color: white;">
+              <option selected value="100">480P</option>
+            <option value="160">720P</option>
+            <option value="300">1080P</option>
+            <option value="600">4K</option>
+            <option value="1200">8K</option>
+          </select>
+        </div>
+            <br>
+            <button class="btn btn-danger m-2">Get graph</button>
+          </div>
+    </div>
+</form>
