@@ -23,6 +23,8 @@
             <option value="1200">8K</option>
           </select>
         </div>
+        <div *ngIf="showerror"  class="btn m-2" style="background-color: rgb(110, 19, 19); width: 100%; color: white">{{error}}</div>
+
       <button class="btn btn-danger" type="submit">Get Graph</button>
     </div>
 

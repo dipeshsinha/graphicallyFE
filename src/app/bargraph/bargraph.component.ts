@@ -12,6 +12,8 @@ export class BargraphComponent implements OnInit {
 
   constructor(private api: ApicallsService, public ngProgress: NgProgress) { }
   color: any;
+  error = '';
+  showerror = false;
 
   ngOnInit() {
   }
@@ -23,6 +25,15 @@ export class BargraphComponent implements OnInit {
     this.ngProgress.start();
     const x = f.value['x'].split(',').map(Number);
     const y = f.value['y'].split(',').map(Number);
+    if (x.length !== y.length) {
+      this.error = 'The lengths of X and Y does not match';
+      this.showerror = true;
+      this.ngProgress.done();
+      setTimeout(() => {
+        this.showerror = false;
+      }, 5000);
+      return;
+    }
     if (f.value['color'] !== undefined) {
       c = f.value['color'];
     }

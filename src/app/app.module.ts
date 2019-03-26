@@ -13,6 +13,8 @@ import { NgProgressModule } from 'ngx-progressbar';
 import { BargraphComponent } from './bargraph/bargraph.component';
 import { HistogramComponent } from './histogram/histogram.component';
 import { PieComponent } from './pie/pie.component';
+import { HistoryComponent } from './history/history.component';
+import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,7 +22,9 @@ const appRoutes: Routes = [
   {path: 'graph', component: GraphComponent},
   {path: 'bar', component: BargraphComponent},
   {path: 'histogram', component: HistogramComponent},
-  {path: 'pie', component: PieComponent}
+  {path: 'pie', component: PieComponent},
+  {path: 'history', component: HistoryComponent},
+  {path: 'about', component: AboutComponent}
 ];
 
 @NgModule({
@@ -31,7 +35,9 @@ const appRoutes: Routes = [
     GraphComponent,
     BargraphComponent,
     HistogramComponent,
-    PieComponent
+    PieComponent,
+    HistoryComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

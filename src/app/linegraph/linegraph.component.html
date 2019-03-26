@@ -7,6 +7,7 @@
             <input ngModel required name="x" type="text" class="btn m-2" placeholder="Enter the X coordinates separated by ' , '(No Spaces) " style="background-color: white; width: 100%">
             <input ngModel required name="y" type="text" class="btn m-2" placeholder="Enter the Y coordinates separated by ' , '(No Spaces) " style="background-color: white; width: 100%">
             <span class="m-2" style="font-size: x-large;">
+
               <hr style="background-color: white">
               Advanced Options (Optional) :
             </span><br><br>
@@ -107,6 +108,7 @@
             <option value="1200">8K</option>
           </select>
         </div>
+        <div *ngIf="showerror"  class="btn m-2" style="background-color: rgb(110, 19, 19); width: 100%; color: white">{{error}}</div>
             <br>
             <button class="btn btn-danger m-2">Get graph</button>
           </div>

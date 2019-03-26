@@ -68,6 +68,9 @@ label {
 .active {
   background-color: #1E1E2F;
   border-radius: 10px;
+  border: none;
+}
+.active:focus {
   border-color: transparent;
 }
 

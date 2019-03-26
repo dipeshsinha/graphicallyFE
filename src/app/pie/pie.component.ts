@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./pie.component.css']
 })
 export class PieComponent implements OnInit {
-  errors = '';
+  error = '';
   showerror = false;
 
   constructor(private api: ApicallsService, public ngProgress: NgProgress) { }
@@ -20,6 +20,15 @@ export class PieComponent implements OnInit {
     this.ngProgress.start();
     const x = f.value['x'].split(',').map(Number);
     const y = f.value['y'].split(',');
+    if (x.length !== y.length) {
+      this.error = 'The lengths of X and Y does not match';
+      this.showerror = true;
+      this.ngProgress.done();
+      setTimeout(() => {
+        this.showerror = false;
+      }, 5000);
+      return;
+    }
     const exp = f.value['exp'].split(',');
     let quality = 100;
     const arr = [];

@@ -5,7 +5,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'app';
   screenHeight = 0;
   screenWidth = 0;
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
   }
   ngOnInit() {
     if (this.screenWidth < 622) {
-      var element = <HTMLInputElement> document.getElementById("slide-sidebar");
+      const element = <HTMLInputElement> document.getElementById('slide-sidebar');
       element.checked = true;
     }
   }

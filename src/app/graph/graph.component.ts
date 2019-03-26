@@ -17,6 +17,12 @@ export class GraphComponent implements OnInit {
       this.router.navigate(['']);
     }
     this.converted_image = 'data:image/png;base64,' + this.http.imagestring;
+    if (localStorage.getItem('countitems')) {
+      localStorage.setItem('countitems', '' + (+localStorage.getItem('countitems') + 1));
+    } else {
+      localStorage.setItem('countitems', '1');
+    }
+    localStorage.setItem('item' + (+localStorage.getItem('countitems') % 10), this.converted_image);
   }
 
 }
