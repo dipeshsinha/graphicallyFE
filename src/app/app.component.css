@@ -100,3 +100,12 @@ label {
     background-color: #1E1E2F;
   }
 }
+.portfolio{
+  height: 105%;
+}
+.sidebar{
+  height: 105%;
+}
+.nav-link:focus {
+  outline: none;
+}

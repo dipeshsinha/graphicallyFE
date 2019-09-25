@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class ApicallsService {
-  link = 'http://dipeshsinha.pythonanywhere.com/';
+  link = 'https://dipeshsinha.pythonanywhere.com/';
   imagestring = 'nil';
   image: any;
 

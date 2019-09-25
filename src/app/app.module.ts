@@ -24,7 +24,8 @@ const appRoutes: Routes = [
   {path: 'histogram', component: HistogramComponent},
   {path: 'pie', component: PieComponent},
   {path: 'history', component: HistoryComponent},
-  {path: 'about', component: AboutComponent}
+  {path: 'about', component: AboutComponent},
+  {path: '**', component: HomeComponent}
 ];
 
 @NgModule({
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {useHash: true}),
     FormsModule,
     HttpClientModule,
     ColorPickerModule,
