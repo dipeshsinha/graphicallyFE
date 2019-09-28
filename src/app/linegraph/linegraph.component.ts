@@ -29,8 +29,8 @@ export class LinegraphComponent implements OnInit {
     let ms = 10;
     let quality = 100;
     const name = {};
-    const x = f.value['x'].split(',').map(Number);
-    const y = f.value['y'].split(',').map(Number);
+    const x = f.value['x'].replace(/\s/g, '').split(',').map(Number);
+    const y = f.value['y'].replace(/\s/g, '').split(',').map(Number);
     if (x.length !== y.length) {
       this.error = 'The lengths of X and Y does not match';
       this.showerror = true;
